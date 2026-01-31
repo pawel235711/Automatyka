@@ -1,5 +1,3 @@
-_**Zastrzeżenie:** Ten tutorial został wygenerowany przez sztuczną inteligencję i ma na celu dostarczenie ogólnych informacji na temat poruszanych zagadnień. Może zawierać uproszczenia i nie powinien być traktowany jako jedyne źródło wiedzy przy projektowaniu lub implementacji rzeczywistych systemów sterowania. Zawsze zaleca się konsultację z wykwalifikowanym inżynierem i odniesienie do specjalistycznej literatury._
-
 # Tutorial: Podstawy Automatyki i Systemów Sterowania
 
 Witaj w tutorialu poświęconym podstawowym zagadnieniom z dziedziny automatyki i teorii sterowania. Materiał ten został przygotowany z myślą o osobach początkujących, które chcą zrozumieć kluczowe koncepcje, takie jak sprzężenie zwrotne, układy adaptacyjne oraz zasady projektowania systemów sterowania. Omówimy również praktyczne przykłady i zadania, aby lepiej zilustrować teorię.

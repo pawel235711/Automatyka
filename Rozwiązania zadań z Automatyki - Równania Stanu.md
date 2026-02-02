@@ -55,48 +55,139 @@ $$x_4 = y^{(3)}$$
 
 **Krok 3: Pochodne zmiennych stanu**
 
-Na podstawie definicji zmiennych stanu, ich pochodne wynoszą:
+## Definicja zmiennych stanu
 
-$$\dot{x}_1 = \dot{y} = x_2$$
-$$\dot{x}_2 = \ddot{y} = x_3$$
-$$\dot{x}_3 = y^{(3)} = x_4$$
-$$\dot{x}_4 = y^{(4)}$$
+Na podstawie definicji zmiennych stanu ich pochodne wynoszą:
 
-**Krok 4: Wyrażenie najwyższej pochodnej**
+\[
+\begin{aligned}
+\dot{x}_1 &= \dot{y} = x_2 \\
+\dot{x}_2 &= \ddot{y} = x_3 \\
+\dot{x}_3 &= y^{(3)} = x_4 \\
+\dot{x}_4 &= y^{(4)}
+\end{aligned}
+\]
 
-Z oryginalnego równania wyznaczamy $y^{(4)}$:
+---
 
-$$y^{(4)} = 8y^{(3)} - 6\ddot{y} - 4\dot{y} + 10y + 4u$$
+## Krok 4: Wyrażenie najwyższej pochodnej
 
-Podstawiamy zmienne stanu:
+Z oryginalnego równania różniczkowego wyznaczamy najwyższą pochodną:
 
-$$\dot{x}_4 = 8x_4 - 6x_3 - 4x_2 + 10x_1 + 4u$$
+\[
+y^{(4)} = 8y^{(3)} - 6\ddot{y} - 4\dot{y} + 10y + 4u
+\]
 
-**Krok 5: Zapis macierzowy**
+Podstawiając zmienne stanu, otrzymujemy:
 
-Zbieramy wszystkie równania na pochodne zmiennych stanu:
+\[
+\dot{x}_4 = 8x_4 - 6x_3 - 4x_2 + 10x_1 + 4u
+\]
 
-$$\begin{bmatrix} \dot{x}_1 \\ \dot{x}_2 \\ \dot{x}_3 \\ \dot{x}_4 \end{bmatrix} = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 10 & -4 & -6 & 8 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} + \begin{bmatrix} 0 \\ 0 \\ 0 \\ 4 \end{bmatrix} u$$
+---
 
-**Równanie wyjścia:**
+## Krok 5: Postać macierzowa (stanowa)
 
-Ponieważ $y = x_1$:
+Zbieramy wszystkie równania pochodnych zmiennych stanu:
 
-$$y = \begin{bmatrix} 1 & 0 & 0 & 0 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} + [0] \cdot u$$
+\[
+\begin{bmatrix}
+\dot{x}_1 \\
+\dot{x}_2 \\
+\dot{x}_3 \\
+\dot{x}_4
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+10 & -4 & -6 & 8
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4
+\end{bmatrix}
++
+\begin{bmatrix}
+0 \\
+0 \\
+0 \\
+4
+\end{bmatrix}
+u
+\]
 
-### Odpowiedź końcowa:
+---
 
-**Macierz stanu A:**
-$$\mathbf{A} = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 10 & -4 & -6 & 8 \end{bmatrix}$$
+## Równanie wyjścia
 
-**Macierz wejścia B:**
-$$\mathbf{B} = \begin{bmatrix} 0 \\ 0 \\ 0 \\ 4 \end{bmatrix}$$
+Ponieważ:
 
-**Macierz wyjścia C:**
-$$\mathbf{C} = \begin{bmatrix} 1 & 0 & 0 & 0 \end{bmatrix}$$
+\[
+y = x_1
+\]
 
-**Macierz przenoszenia D:**
-$$\mathbf{D} = [0]$$
+równanie wyjścia ma postać:
+
+\[
+y =
+\begin{bmatrix}
+1 & 0 & 0 & 0
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4
+\end{bmatrix}
++ 0 \cdot u
+\]
+
+---
+
+## Odpowiedź końcowa
+
+### Macierz stanu \( \mathbf{A} \)
+
+\[
+\mathbf{A} =
+\begin{bmatrix}
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+10 & -4 & -6 & 8
+\end{bmatrix}
+\]
+
+### Macierz wejścia \( \mathbf{B} \)
+
+\[
+\mathbf{B} =
+\begin{bmatrix}
+0 \\
+0 \\
+0 \\
+4
+\end{bmatrix}
+\]
+
+### Macierz wyjścia \( \mathbf{C} \)
+
+\[
+\mathbf{C} =
+\begin{bmatrix}
+1 & 0 & 0 & 0
+\end{bmatrix}
+\]
+
+### Macierz przenoszenia \( \mathbf{D} \)
+
+\[
+\mathbf{D} = [0]
+\]
 
 ---
 

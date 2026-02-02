@@ -59,14 +59,10 @@ $$x_4 = y^{(3)}$$
 
 Na podstawie definicji zmiennych stanu ich pochodne wynoszą:
 
-\[
-\begin{aligned}
-\dot{x}_1 &= \dot{y} = x_2 \\
-\dot{x}_2 &= \ddot{y} = x_3 \\
-\dot{x}_3 &= y^{(3)} = x_4 \\
-\dot{x}_4 &= y^{(4)}
-\end{aligned}
-\]
+x1' = y'  = x2  
+x2' = y'' = x3  
+x3' = y''' = x4  
+x4' = y''''
 
 ---
 
@@ -74,15 +70,11 @@ Na podstawie definicji zmiennych stanu ich pochodne wynoszą:
 
 Z oryginalnego równania różniczkowego wyznaczamy najwyższą pochodną:
 
-\[
-y^{(4)} = 8y^{(3)} - 6\ddot{y} - 4\dot{y} + 10y + 4u
-\]
+y'''' = 8·y''' − 6·y'' − 4·y' + 10·y + 4·u
 
 Podstawiając zmienne stanu, otrzymujemy:
 
-\[
-\dot{x}_4 = 8x_4 - 6x_3 - 4x_2 + 10x_1 + 4u
-\]
+x4' = 8·x4 − 6·x3 − 4·x2 + 10·x1 + 4·u
 
 ---
 
@@ -90,35 +82,29 @@ Podstawiając zmienne stanu, otrzymujemy:
 
 Zbieramy wszystkie równania pochodnych zmiennych stanu:
 
-\[
-\begin{bmatrix}
-\dot{x}_1 \\
-\dot{x}_2 \\
-\dot{x}_3 \\
-\dot{x}_4
-\end{bmatrix}
-=
-\begin{bmatrix}
-0 & 1 & 0 & 0 \\
-0 & 0 & 1 & 0 \\
-0 & 0 & 0 & 1 \\
-10 & -4 & -6 & 8
-\end{bmatrix}
-\begin{bmatrix}
-x_1 \\
-x_2 \\
-x_3 \\
-x_4
-\end{bmatrix}
-+
-\begin{bmatrix}
-0 \\
-0 \\
-0 \\
-4
-\end{bmatrix}
-u
-\]
+x' = A·x + B·u
+
+gdzie:
+
+x' = [ x1'  
+       x2'  
+       x3'  
+       x4' ]
+
+x  = [ x1  
+       x2  
+       x3  
+       x4 ]
+
+A  = [  0   1   0   0  
+        0   0   1   0  
+        0   0   0   1  
+       10  -4  -6   8 ]
+
+B  = [ 0  
+       0  
+       0  
+       4 ]
 
 ---
 
@@ -126,25 +112,42 @@ u
 
 Ponieważ:
 
-\[
-y = x_1
-\]
+y = x1
 
 równanie wyjścia ma postać:
 
-\[
-y =
-\begin{bmatrix}
-1 & 0 & 0 & 0
-\end{bmatrix}
-\begin{bmatrix}
-x_1 \\
-x_2 \\
-x_3 \\
-x_4
-\end{bmatrix}
-+ 0 \cdot u
-\]
+y = C·x + D·u
+
+gdzie:
+
+C = [ 1  0  0  0 ]  
+D = [ 0 ]
+
+---
+
+## Odpowiedź końcowa
+
+### Macierz stanu A
+
+A = [  0   1   0   0  
+       0   0   1   0  
+       0   0   0   1  
+      10  -4  -6   8 ]
+
+### Macierz wejścia B
+
+B = [ 0  
+      0  
+      0  
+      4 ]
+
+### Macierz wyjścia C
+
+C = [ 1  0  0  0 ]
+
+### Macierz przenoszenia D
+
+D = [ 0 ]
 
 ---
 
